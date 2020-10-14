@@ -4,18 +4,21 @@ package com.company;
 import com.sun.jdi.InterfaceType;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
 
     public static void main(String[] args) {
-        returnerWithLine(24, generateRandomAge(34, 56));
-        canGoOut(23, generateRandomAge(14, 34));
-        canGoOut(27, generateRandomAge(24, 56));
-        canGoOut(12, generateRandomAge(14, 56));
-        canGoOut(23, generateRandomAge(4, 6));
-        canGoOut(10, generateRandomAge(5, 56));
-        
+
+
+        returnerWithLine(24, generateRandomAge());
+        canGoOut(23, generateRandomAge());
+        canGoOut(27, generateRandomAge());
+        canGoOut(12, generateRandomAge());
+        canGoOut(23, generateRandomAge());
+        canGoOut(10, generateRandomAge());
+
 
     }
 
@@ -36,7 +39,20 @@ public class Main {
 
     }
 
-    public static int generateRandomAge(int min, int max) {
+    public static int generateRandomAge() {
+
+        Scanner userImput = new Scanner(System.in);
+        System.out.println("Введите минимальное значение: ");
+
+        int min = userImput.nextInt();
+
+
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("Введите максимальное значение: ");
+
+        int max = userImput.nextInt();
+
+
         if (min >= max) {
             throw new IllegalArgumentException("max должен быть больше min!");
         }
